@@ -1,0 +1,4 @@
+cron:
+  - description: "hourly AQI data loading from source"
+    url: /dataIngestion/start
+    schedule: every 1 hours
