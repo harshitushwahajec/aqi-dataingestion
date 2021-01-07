@@ -37,4 +37,4 @@ jobs:
 #           # GAE variables to be written to the app.yaml file
 #           gae_variables: # optional
           # Path to the app.yml, Defaults to ./app.yml
-          gae_config_path: ../../src/main/appengine/app.yaml
+          gae_config_path: /src/main/appengine/app.yaml
