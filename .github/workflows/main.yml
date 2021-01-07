@@ -36,5 +36,5 @@ jobs:
           project_id: ${{ secrets.AQI_PROJECT_ID }}
 #           # GAE variables to be written to the app.yaml file
 #           gae_variables: # optional
-#           # Path to the app.yml, Defaults to ./app.yml
-#           gae_config_path: # optional
+          # Path to the app.yml, Defaults to ./app.yml
+          gae_config_path: /src/main/resources/app.yaml
