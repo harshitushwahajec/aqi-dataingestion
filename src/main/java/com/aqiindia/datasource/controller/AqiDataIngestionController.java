@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("notvalidanymore")
+@RequestMapping("dataIngestion")
 public class AqiDataIngestionController {
 
     @Autowired
