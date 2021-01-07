@@ -30,7 +30,7 @@ jobs:
         uses: atRobertoFlores/gae_deploy_action@1.2
         with:
           # Service Account JSON key
-          service_account: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          service_account: ${{ secrets.AQI_SERVICE_ACCOUNT }}
           # GAE project name
           project_name: ${{ secrets.AQI_PROJECT_ID }}
           # No Deploy, just get GAE info
