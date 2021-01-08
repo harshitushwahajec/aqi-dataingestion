@@ -46,3 +46,5 @@ jobs:
           gae_variables: ${{ secrets.SECRET_VARIABLES }}
           # Path to the app.yml, Defaults to ./app.yml
           gae_config_path: ./src/main/appengine/app.yaml
+        env:
+          SERVICE_ACCOUNT_KEY_BASE64: ${{ secrets.SERVICE_ACCOUNT_KEY_BASE64 }}
