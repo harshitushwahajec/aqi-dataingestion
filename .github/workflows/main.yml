@@ -23,12 +23,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: ikuanyshbekov/app-yaml-env-compiler@v1.0
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Add secrets to app.yaml
+        uses: ikuanyshbekov/app-yaml-env-compiler@v1.0
         env:
           SERVICE_ACCOUNT_KEY_BASE64: ${{ secrets.SERVICE_ACCOUNT_KEY_BASE64 }}
 
-      - name: Google App Engine (GAE) Deploy
+      - name: Google App Engine  Deploy
         # You may pin to the exact commit or the version.
         # uses: atRobertoFlores/gae_deploy_action@b1ff9efc841e7415ba3510bf94b23c8fb46197eb
         uses: atRobertoFlores/gae_deploy_action@1.2
