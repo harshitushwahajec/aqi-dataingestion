@@ -45,4 +45,4 @@ jobs:
           # GAE variables to be written to the app.yaml file
           gae_variables: ${{ secrets.SERVICE_ACCOUNT_KEY_BASE64 }}
           # Path to the app.yml, Defaults to ./app.yml
-#           gae_config_path: # optional
+          gae_config_path: ./src/main/appengine/app.yaml
