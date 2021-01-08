@@ -43,6 +43,6 @@ jobs:
           # GAE project id
           project_id: ${{ secrets.GCP_PROJECT_NAME }}
           # GAE variables to be written to the app.yaml file
-          gae_variables: ${{ secrets.SERVICE_ACCOUNT_KEY_BASE64 }}
+          gae_variables: ${{ secrets.SECRET_VARIABLES }}
           # Path to the app.yml, Defaults to ./app.yml
           gae_config_path: ./src/main/appengine/app.yaml
