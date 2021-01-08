@@ -26,11 +26,6 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v2
 
-      - name: Add secrets to app.yaml
-        uses: ikuanyshbekov/app-yaml-env-compiler@v1.0
-        env:
-          SERVICE_ACCOUNT_KEY_BASE64: ${{ secrets.SERVICE_ACCOUNT_KEY_BASE64 }}
-
       - name: Google App Engine  Deploy
         # You may pin to the exact commit or the version.
         # uses: atRobertoFlores/gae_deploy_action@b1ff9efc841e7415ba3510bf94b23c8fb46197eb
@@ -40,17 +35,3 @@ jobs:
           service_account: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           # GAE project name
           project_name: ${{ secrets.GCP_PROJECT_NAME }}
-#      - name: Publish app to Google App Engine
-#        uses: zxyle/publish-gae-action@v2.3.0
-#        with:
-#          # The service account email which will be used for authentication.
-#          service_account_email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
-#          # The service account key which will be used for authentication.
-#          service_account_key:  ${{ secrets.SERVICE_ACCOUNT_KEY }}
-#          # GAE project id
-#          project_id: ${{ secrets.GCP_PROJECT_NAME }}
-#          # GAE variables to be written to the app.yaml file
-#          gae_variables: ${{ secrets.SECRET_VARIABLES }}
-#          # Path to the app.yml, Defaults to ./app.yml
-#          gae_config_path: ./src/main/appengine/app.yaml
-
