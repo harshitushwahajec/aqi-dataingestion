@@ -24,15 +24,25 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Google App Engine (GAE) Deploy
-        # You may pin to the exact commit or the version.
-        # uses: atRobertoFlores/gae_deploy_action@b1ff9efc841e7415ba3510bf94b23c8fb46197eb
-        uses: atRobertoFlores/gae_deploy_action@1.2
+#       - name: Google App Engine (GAE) Deploy
+#         # You may pin to the exact commit or the version.
+#         # uses: atRobertoFlores/gae_deploy_action@b1ff9efc841e7415ba3510bf94b23c8fb46197eb
+#         uses: atRobertoFlores/gae_deploy_action@1.2
+#         with:
+#           # Service Account JSON key
+#           service_account: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+#           # GAE project name
+#           project_name: ${{ secrets.GCP_PROJECT_NAME }}
+      - name: Publish app to Google App Engine
+        uses: zxyle/publish-gae-action@v2.3.0
         with:
-          # Service Account JSON key
-          service_account: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-          # GAE project name
-          project_name: ${{ secrets.GCP_PROJECT_NAME }}
-        env:
-          AQI_DATAINGEST_DATADESTINATION_BUCKET: ${{ secrets.AQI_DATAINGEST_DATADESTINATION_BUCKET }}
-          AQI_DATAINGEST_DATASOURCE_URL_APIKEY: ${{ secrets.AQI_DATAINGEST_DATASOURCE_URL_APIKEY }}
+          # The service account email which will be used for authentication.
+          service_account_email: ${{ secrets,SERVICE_ACCOUNT_EMAIL }}
+          # The service account key which will be used for authentication.
+          service_account_key:  ${{ secrets.SERVICE_ACCOUNT_KEY }}
+          # GAE project id
+          project_id: ${{ secrets.GCP_PROJECT_NAME }}
+          # GAE variables to be written to the app.yaml file
+          gae_variables: ${{ secrets.SERVICE_ACCOUNT_KEY_BASE64 }}
+          # Path to the app.yml, Defaults to ./app.yml
+#           gae_config_path: # optional
